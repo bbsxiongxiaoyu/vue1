@@ -1,14 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+import Router from 'vue-router'
+import Home from '../Home.vue'
+import About from '../views/About'
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+          id: 1,
+          path: '/2',
+          component: About,
+          name: 'about',
+      }
+    ]
   },
   {
     path: '/about',
@@ -25,5 +34,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 
 export default router
