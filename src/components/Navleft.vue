@@ -58,7 +58,6 @@ export default {
   methods:{
     gotor(name){
       this.$emit('func',name)
-
       this.$router.push({path:'/'+name})
     }
   }

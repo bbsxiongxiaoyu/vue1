@@ -18,7 +18,7 @@
           <el-dropdown-item>删除</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <span>bbsxiongxiaoyu</span>
+      <span>{{getfrom}}</span>
     </el-header>
     
     <el-main>
@@ -52,12 +52,18 @@ export default {
     return{
       loading: true,
       msg:'',
+      
+      getfrom:''
     }
   },
   methods:{
     getMsgFormSon(data){
       this.msg = data;
     }
+  },
+  created(){
+    this.getfrom = localStorage.getItem('token').replace("\"","").replace("\"","")
+    console.log(this.getfrom);
   }
 }
 </script>
