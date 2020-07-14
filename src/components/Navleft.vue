@@ -19,11 +19,11 @@ export default {
     return{
       listData:[
         {
-          title:'菜单1',
+          title:'数据管理',
           titleList:[
             {
               id:1,
-              name:'测试1',
+              name:'表格选项',
             },
             {
               id:2,

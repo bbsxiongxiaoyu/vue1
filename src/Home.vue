@@ -27,7 +27,7 @@
         element-loading-text="拼命加载中"
         element-loading-spinner="el-icon-loading"
         element-loading-background="rgba(0, 0, 0, 0.8)"
-        style="width: 100%"
+        style="width: 100%;height:300px"
         v-if="this.msg==''">
       </el-table>
       <router-view v-else/>
@@ -67,3 +67,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" >
+.el-main{
+  padding: 0;
+}
+</style>
